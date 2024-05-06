@@ -1,14 +1,16 @@
 import { envClient } from "@/lib/env";
-import { Gitlab } from "@gitbeaker/core";
+import { Gitlab } from "@gitbeaker/rest";
 class ApiClient {
-  public api?: Gitlab;
+  public api?: InstanceType<typeof Gitlab>;
   constructor() {
     this.initializeClient();
   }
   public initializeClient() {
+    const token = localStorage.getItem("token");
+    if (!token) return;
     this.api = new Gitlab({
       host: envClient.url,
-      token: envClient.token,
+      token: token,
     });
   }
 }
