@@ -1,3 +1,9 @@
+import { ProjectList } from "@/components/Project/ProjectList";
+
 export const Home = () => {
-  return <h1>hi</h1>;
+  return (
+    <div>
+      <ProjectList />
+    </div>
+  );
 };

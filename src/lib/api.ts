@@ -7,10 +7,10 @@ class ApiClient {
   }
   public initializeClient() {
     const token = localStorage.getItem("token");
-    if (!token) return;
+    // if (!token) return;
     this.api = new Gitlab({
-      host: envClient.url,
-      token: token,
+      host: "https://hamgit.ir",
+      token: "glpat-6wzvG6MZ4x2E-bW-Y9NC",
     });
   }
 }
